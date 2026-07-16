@@ -4,10 +4,14 @@ import { PageTransition, MagneticButton } from '../components/ui/LayoutControls'
 import { useForm } from 'react-hook-form';
 import { FaEnvelope, FaPhone, FaLinkedin, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 
-
-const FORMSPREE_ID = '';
+// ─── Formspree setup ────────────────────────────────────────────────────────
+// 1. Go to https://formspree.io and create a free account
+// 2. Create a new form, choose your email, copy the form ID (e.g. "xpwzgkdo")
+// 3. Replace the placeholder below with your actual Formspree form ID
+const FORMSPREE_ID = 'YOUR_FORM_ID'; // ← replace this
 const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
 const IS_CONFIGURED = FORMSPREE_ID !== 'YOUR_FORM_ID';
+// ────────────────────────────────────────────────────────────────────────────
 
 type FormData = {
   fullName: string;
@@ -22,6 +26,7 @@ export default function Contact() {
 
   const onSubmit = async (data: FormData) => {
     if (!IS_CONFIGURED) {
+      // Fallback: open the user's mail client if Formspree isn't configured
       const body = encodeURIComponent(`Name: ${data.fullName}\nEmail: ${data.email}\n\n${data.message}`);
       window.location.href = `mailto:Titiayodele6@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${body}`;
       return;
@@ -96,7 +101,7 @@ export default function Contact() {
                 src="/profile.jpg"
                 alt="Esther Titilayo Ayodele"
                 className="w-full h-full rounded-full object-cover shadow-xl ring-4 ring-primary/30"
-                style={{ objectPosition: 'center 12%' }}
+                style={{ objectPosition: 'center 30%' }}
               />
             </div>
           </motion.div>

@@ -332,7 +332,7 @@ export default function CV() {
               src="/profile.jpg"
               alt="Esther Titilayo Ayodele"
               className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-xl ring-4 ring-primary/30"
-              style={{ objectPosition: 'center 12%' }}
+              style={{ objectPosition: 'center 30%' }}
             />
           </div>
         </section>

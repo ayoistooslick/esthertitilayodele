@@ -129,14 +129,22 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Right: profile image */}
-          <div className="flex justify-center">
-            <img
-              src="/profile.jpg"
-              alt="Esther Titilayo Ayodele"
-              className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl ring-4 ring-primary/30"
-              style={{ objectPosition: 'center 12%' }}
-            />
+          {/* Right: editorial portrait */}
+          <div className="flex justify-center md:justify-end">
+            <div className="relative">
+              {/* Gold corner brackets */}
+              <div className="absolute -top-4 -left-4 w-14 h-14 border-t-[3px] border-l-[3px] border-primary rounded-tl-xl z-10 pointer-events-none" />
+              <div className="absolute -bottom-4 -right-4 w-14 h-14 border-b-[3px] border-r-[3px] border-primary rounded-br-xl z-10 pointer-events-none" />
+              {/* Gold accent dot */}
+              <div className="absolute top-6 -right-5 w-10 h-10 bg-primary rounded-full z-10 opacity-90 shadow-lg" />
+              <div className="absolute -bottom-2 left-6 w-5 h-5 bg-primary/50 rounded-full z-10" />
+              <img
+                src="/profile.jpg"
+                alt="Esther Titilayo Ayodele"
+                className="w-64 h-[360px] md:w-[300px] md:h-[420px] rounded-2xl object-cover shadow-2xl"
+                style={{ objectPosition: 'center 30%' }}
+              />
+            </div>
           </div>
         </section>
 
@@ -198,7 +206,7 @@ export default function Home() {
                 title: "Marketing & Communications",
                 desc: "Brand building, content strategy and campaigns that actually drive results.",
                 link: "/marketing",
-                img: "https://i.ibb.co/gZRdS6tF/42ec7f05bf0b.jpg",
+                img: "/profile.jpg",
               },
             ].map((portfolio, i) => (
               <motion.div
