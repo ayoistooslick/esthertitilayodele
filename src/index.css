@@ -147,6 +147,12 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
+  /* Restore default cursor on touch / mobile devices */
+  @media (pointer: coarse) {
+    body { cursor: auto !important; }
+    * { cursor: auto !important; }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-sans font-bold;
   }
