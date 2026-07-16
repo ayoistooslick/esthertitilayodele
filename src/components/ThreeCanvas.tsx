@@ -78,26 +78,26 @@ function Planet() {
       <mesh ref={meshRef}>
         <sphereGeometry args={[0.45, 32, 32]} />
         <meshStandardMaterial
-          color="#EA580C"
-          emissive="#C2410C"
-          emissiveIntensity={0.6}
-          roughness={0.7}
-          metalness={0.1}
+          color="#D4AF37"
+          emissive="#B8922A"
+          emissiveIntensity={0.5}
+          roughness={0.5}
+          metalness={0.4}
         />
       </mesh>
       {/* Ring */}
       <mesh ref={ringRef}>
         <torusGeometry args={[0.7, 0.06, 8, 48]} />
         <meshStandardMaterial
-          color="#F97316"
-          emissive="#EA580C"
-          emissiveIntensity={0.4}
+          color="#D4AF37"
+          emissive="#D4AF37"
+          emissiveIntensity={0.35}
           transparent
           opacity={0.6}
         />
       </mesh>
       {/* Ambient + point light for planet glow */}
-      <pointLight position={[-3, 1.5, 2]} color="#EA580C" intensity={1.2} distance={8} />
+      <pointLight position={[-3, 1.5, 2]} color="#D4AF37" intensity={1.0} distance={8} />
     </>
   );
 }
