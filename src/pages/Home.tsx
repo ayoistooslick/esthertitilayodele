@@ -58,8 +58,26 @@ export default function Home() {
         {/* ── Hero ── */}
         <section className="min-h-[90vh] w-full pt-24 pb-10 grid md:grid-cols-2 gap-12 items-center">
 
-          {/* Left: text */}
-          <div className="flex flex-col items-start text-left">
+          {/* Right: editorial portrait — shown first on mobile */}
+          <div className="flex justify-center md:justify-end md:order-last">
+            <div className="relative">
+              {/* Gold corner brackets */}
+              <div className="absolute -top-4 -left-4 w-14 h-14 border-t-[3px] border-l-[3px] border-primary rounded-tl-xl z-10 pointer-events-none" />
+              <div className="absolute -bottom-4 -right-4 w-14 h-14 border-b-[3px] border-r-[3px] border-primary rounded-br-xl z-10 pointer-events-none" />
+              {/* Gold accent dot */}
+              <div className="absolute top-6 -right-5 w-10 h-10 bg-primary rounded-full z-10 opacity-90 shadow-lg" />
+              <div className="absolute -bottom-2 left-6 w-5 h-5 bg-primary/50 rounded-full z-10" />
+              <img
+                src="/profile.jpg"
+                alt="Esther Titilayo Ayodele"
+                className="w-64 h-[360px] md:w-[300px] md:h-[420px] rounded-2xl object-cover shadow-2xl"
+                style={{ objectPosition: 'center 30%' }}
+              />
+            </div>
+          </div>
+
+          {/* Left: text — shown second on mobile, first column on desktop */}
+          <div className="flex flex-col items-start text-left md:order-first">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -129,23 +147,6 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Right: editorial portrait */}
-          <div className="flex justify-center md:justify-end">
-            <div className="relative">
-              {/* Gold corner brackets */}
-              <div className="absolute -top-4 -left-4 w-14 h-14 border-t-[3px] border-l-[3px] border-primary rounded-tl-xl z-10 pointer-events-none" />
-              <div className="absolute -bottom-4 -right-4 w-14 h-14 border-b-[3px] border-r-[3px] border-primary rounded-br-xl z-10 pointer-events-none" />
-              {/* Gold accent dot */}
-              <div className="absolute top-6 -right-5 w-10 h-10 bg-primary rounded-full z-10 opacity-90 shadow-lg" />
-              <div className="absolute -bottom-2 left-6 w-5 h-5 bg-primary/50 rounded-full z-10" />
-              <img
-                src="/profile.jpg"
-                alt="Esther Titilayo Ayodele"
-                className="w-64 h-[360px] md:w-[300px] md:h-[420px] rounded-2xl object-cover shadow-2xl"
-                style={{ objectPosition: 'center 30%' }}
-              />
-            </div>
-          </div>
         </section>
 
         {/* ── Stats ── */}
@@ -218,12 +219,13 @@ export default function Home() {
                 className="group"
               >
                 <div className="glass-panel rounded-[1.75rem] overflow-hidden hover:-translate-y-2 transition-transform duration-400 border border-foreground/8 hover:border-primary/40">
-                  <div className="h-56 overflow-hidden relative">
+                  <div className="h-72 overflow-hidden relative">
                     <div className="absolute inset-0 bg-background/20 z-10 group-hover:bg-transparent transition-colors duration-400" />
                     <img
                       src={portfolio.img}
                       alt={portfolio.title}
                       className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+                      style={{ objectPosition: 'center 15%' }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
                   </div>
